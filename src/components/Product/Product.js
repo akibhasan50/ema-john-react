@@ -4,8 +4,9 @@ import ReactDOM from 'react-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingCart  } from '@fortawesome/free-solid-svg-icons'
 
-export default function Product({ product }) {
-  console.log(product);
+export default function Product({ product,handelAddToCart }) {
+ 
+
   return (
     <div className="product">
       <div>
@@ -21,7 +22,7 @@ export default function Product({ product }) {
         <p>
           <small>Only {product.stock} left in stock - Order soon</small>
         </p>
-       <button className='main-button'><FontAwesomeIcon icon={faShoppingCart } />Add to cart</button>
+       <button onClick={() =>handelAddToCart(product)} className='main-button'><FontAwesomeIcon icon={faShoppingCart } />Add to cart</button>
       </div>
     </div>
   );
